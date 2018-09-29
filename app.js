@@ -23,7 +23,7 @@ Store.prototype.run1Day=function(){
   }
 };
 
-Store.prototype.render=function(){
+Store.prototype.render = function(){
   var head=document.createElement('h2'); //each store will be its own  h2
   head.setAttribute('id','storeName');
   head.textContent = this.name;
@@ -40,7 +40,7 @@ Store.prototype.render=function(){
   }
 };
 
-var storeContainer= document.getElementById('stores');
+var storeContainer = document.getElementById('salesData');
 var stores=[
   new Store('1st and Pike',23,65,6.3),
   new Store('SeaTac Airport',3,24,1.2),
@@ -49,7 +49,7 @@ var stores=[
   new Store('Alki',2,16,4.6)
 ];
 
-var buildSite=function(){
+var buildSite = function(){
   for (var i= 0;i<stores.length; i++){
     stores[i].run1Day();
     console.log(stores);
