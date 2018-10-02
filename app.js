@@ -1,5 +1,4 @@
 'use-strict';
-
 var Store=function(name,minPatrons,maxPatrons,avgSales){
   this.name=name;
   this.minPatrons=minPatrons;
@@ -7,11 +6,13 @@ var Store=function(name,minPatrons,maxPatrons,avgSales){
   this.avgSales=avgSales;
   this.hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
   this.day=[];
+  this.total=0;
 };
 
 Store.prototype.customersOneHour=function(){
   var thisVisitors=Math.floor(Math.random()*(this.maxPatrons-this.minPatrons+1)+this.minPatrons);
   var thisSales=Math.round(thisVisitors*this.avgSales);
+  this.total+=thisSales;
   return [thisVisitors,thisSales];
 };
 
@@ -24,20 +25,21 @@ Store.prototype.run1Day=function(){
 };
 
 Store.prototype.render = function(){
-  var head=document.createElement('h2'); //each store will be its own  h2
-  head.setAttribute('id','storeName');
-  head.textContent = this.name;
-  var statList =document.createElement('ul');
-  statList.setAttribute('id','salesInfo');
-  storeContainer.appendChild(head);
-  head.appendChild(statList);
+  var tableTop=document.getElementById('tHeader');
+  var trEl=document.createElement('tr'); //each store will be its own table row
+  trEl.setAttribute('id','storeName');
+  trEl.textContent = this.name;
+  tableTop.appendChild(trEl);
 
-  for (var j = 1; j<this.hours.length;j++){ //prints the information of each store to the webpage, as an unordered list
-    var stat=document.createElement('li');
+  for (var j = 0; j<this.hours.length;j++){ //creates cells for each hour and appends them to the table
+    var stat=document.createElement('td');
     stat.setAttribute('id','stats');
-    stat.textContent=`${this.hours[j]}: ${this.day[j][1]}`;
-    statList.appendChild(stat);
+    stat.textContent=`${this.day[j][1]}`;
+    trEl.appendChild(stat);
   }
+  var fullSales = document.createElement('td');
+  fullSales.textContent=(this.total);
+  trEl.appendChild(fullSales);
 };
 
 var storeContainer = document.getElementById('salesData');
@@ -49,15 +51,76 @@ var stores=[
   new Store('Alki',2,16,4.6)
 ];
 
-var buildSite = function(){
-  for (var i= 0;i<stores.length; i++){
+var buildFooter=function(){
+  var tFoot=document.createElement('tfoot');
+  var th=document.createElement('th');
+  th.textContent=('Total sales per hour');
+  tFoot.appendChild(th);
+  var tdEl= document.createElement('td');
+  for (var i=0; i<stores[0].hours.length; i++){//to get 14 indeces
+    var totalArr=[];
+    var total=0;
+    for (var j=0;j<stores.length;j++){//to add all stores at each index
+      total+=stores[j].day[i][1];
+    }
+    totalArr[i]=total;
+    tdEl.textContent=(totalArr[i]);
+    tFoot.appendChild(tdEl);
+  }
+  storeContainer.appendChild(tFoot);
+};
+
+var buildTable = function(){
+
+  //fencepost the top row to ensure it only creates one header line
+  var tTop = document.createElement('thead');
+  tTop.setAttribute('id','tHeader');
+  storeContainer.appendChild(tTop);
+  var title = document.createElement('th');
+  title.textContent=('Store Location');
+  tTop.appendChild(title);
+  for (var i = 0; i<stores[0].hours.length; i++){
+    var hrTd = document.createElement('th');
+    hrTd.textContent=(stores[0].hours[i]);
+    console.log('appending hour'+stores[0].hours[i]);
+    tTop.appendChild(hrTd);
+  }
+  var total= document.createElement('th');
+  total.textContent=('Total Sales');
+  tTop.appendChild(total);
+
+  //render each store and append it to the table.
+  for (i= 0;i<stores.length; i++){
     stores[i].run1Day();
     console.log(stores);
     stores[i].render();
   }
+  buildFooter();
 };
 
-buildSite();
+
+buildTable();
+
+
+var form = document.getElementById('newStoreForm');
+
+console.log(form);
+
+var newStore = function (submit) {
+  submit.preventDefault();
+  var location=submit.target.location.value;
+  var minCustomer=submit.target.minCustomers.value;
+  var maxCustomer=submit.target.maxCustomers.value;
+  var averageSales=submit.target.averageSales.value;
+  var x = new Store(location,minCustomer,maxCustomer,averageSales);
+  x.run1Day();
+  stores.push(x);
+  storeContainer.deleteTFoot();
+  x.render();
+  buildFooter();
+};
+
+form.addEventListener('submit', newStore, false);
 
 
 // // var store={
