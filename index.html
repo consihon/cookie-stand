@@ -8,12 +8,46 @@
     <link href="style.css" type="text/css" rel = "styleSheet">
 </head>
 <body>
-    <h1>Pats Salmon cookies</h1>
-    <img src ="salmon.png">
-    <div id='stores'>"This is my Div"</div>
-    <p>
+<div class=floatingHead>
+    
+    <img id = "head" src ="salmon.svg">
+    
+    <div id = "line">
+        <p></p>
+    </div>
+</div>
 
-    </p>
+<div class="column1of2">
+    <h1 id = headTitle>Pats Salmon cookies </h1>
+    
+    <table id='salesData'></table>
+</div>
+
+
+<div class="column2of2" id="storeForm">
+    <form id ="newStoreForm">
+    <fieldset>
+        <legend>Create new store</legend>
+        <label>Location:<br />
+            <input type = "text" name="location"/>
+        </label>
+        <br />
+        <label>Minimum hourly customers<br />
+            <input type = "number" name="minCustomers" />
+        </label>
+        <br />
+        <label>Maximum hourly customers<br />
+            <input type = "number" name="maxCustomers"/>
+        </label>
+        <br />
+        <label>Average cookies sold per sale<br />
+            <input type ="number" name = "averageSales" />
+        </label>
+        <br />
+        <input type = "submit" value="Add Store" />
+    </fieldset>
+    </form>
+</div>
     
 </body>
 <script href src ="app.js"></script>

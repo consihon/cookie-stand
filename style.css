@@ -1,5 +1,72 @@
 *{
-    outline: solid, rebeccapurple;
-    background-color: cornflowerblue
+     
+    -webkit-font-smoothing: antialiased;
+    /* ^obtained online from u/chrisburton @css-tricks.com */
+    background-color:black;
+    color: white;
+    margin:5px;
+}
+div{
+    border:1px solid red;
+}
+.floatingHead{
+    width:100%;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-color: black;
+    z-index: 70;
+}
+#headTitle{
+    text-align: center;
+    font-family:"Bodoni 72",Didot,"Hoe­fler Text",serif;
+}
+
+#line{
+
+    border:none;
+    top:38%;
+    position: absolute;
+    width: 100%;
+    border-bottom:1px solid white;
+    z-index: 90;
+    padding: 0.5px;
+
+    z-index: 70;
+
+}
+.column1of2{
+    position: relative;
+    top:110px;
+    float:left;
+    width:60%;
+}
+
+#salesData{
+    font-family: Tahoma, Verdana, sans-serif;
+    font-style: normal;
+    font-size:12px;
+}
+
+.column2of2{
+    top:110px;
+    position: relative;
+    float:left;
+    width:40%;
+}
+table{
     
+}
+h1{
+    
+    z-index: 100;
+}
+img{
+    float:left;
+    height:50px;
+    z-index: 100;
+    
+}
+h1{
+    font-family: sans-serif;
 }
