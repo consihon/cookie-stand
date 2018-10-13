@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>/title goes here/</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="style.css" type="text/css" rel = "styleSheet">
+    
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <a href = "index.html">
+                <h1> Pats Salmon cookies </h1>
+            </a>
+        </div>
+    </header>
+
+
+<main>
+    <h1> Sales </h1>
+    
+    <table id="salesData"></table>
+
+    <form id = "newStoreForm">
+            <fieldset>
+                <legend>Create new store</legend>
+                <label>Location:<br />
+                    <input type = "text"name="location"/>
+                </label>
+                <br />
+                <label>Minimum hourly customers<br />
+                    <input type = "number"name="minCustomers" />
+                </label>
+                <br />
+                <label>Maximum hourly customers<br />
+                    <input type = "number"name="maxCustomers"/>
+                </label>
+                <br />
+                <label>Average cookies sold per sale<br />
+                    <input type ="number"name = "averageSales" />
+                </label>
+                <br />
+                <input type = "submit" value="Add Store" />
+            </fieldset>
+    </form>
+</main>
+    
+</body>
+<script href src ="app.js"></script>
+</html>

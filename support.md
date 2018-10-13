@@ -82,3 +82,16 @@ Besides using the picture of the fish... you should use...
 7. Anything else you'd like to add related to style. But remember: simplicity, clarity,  and consistency are good things in design.
 8. Be thoughtful about layout and overall organization of the page.
 9. Include all of the typical stuff that you'll find on the home page of a business: locations, hours, contact information, some text about how awesome the business is, etc. Be creative, and again, think about what is meaningful to a typical end user.
+
+
+# Assignment Overview: Lab 9
+
+Continue working on the functionality of your **sales.html** page if you do not have it working 100% yet, including the row of totals across the bottom.
+
+Here's your other tasks for today:
+
+- Style up the public facing page (**index.html**) to make it appealing to customers. NOTE: You **must** use all of the images in the adjacent asset directory. Your client insists that you use Every. Single. One.
+- Your public-facing **index.html** page should have all of the things you'd expect such a page to have for such a business: locations with addresses, hours open, contact information, and so us. Just do mockups of these things since this is not a real business, of course.
+- You can also mock up references (either links or little sections on the **index.html** page) for things like About Us (company history and mission), Merchandise (sales of t-shirts, mugs, stickers, etc.), links to salmon events like the Salmon Days in Issaquah, etc.
+
+- Apply a similar style to the **sales.html** page.

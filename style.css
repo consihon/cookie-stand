@@ -1,72 +1,76 @@
 *{
-     
+    text-align: center;
     -webkit-font-smoothing: antialiased;
     /* ^obtained online from u/chrisburton @css-tricks.com */
-    background-color:black;
-    color: white;
+    color: salmon;
     margin:5px;
+}   
+body{
+   
+    background-color: azure;
 }
-div{
-    border:1px solid red;
+a{
+    text-decoration-line: none;
+    font-size:18px;
+
 }
-.floatingHead{
-    width:100%;
-    position:fixed;
-    top:0px;
-    left:0px;
-    background-color: black;
-    z-index: 70;
+header{
+    
+    height:110px;
+    margin:auto;
+    margin-bottom:none;
+
+
 }
-#headTitle{
+#logo{
+    background-image: url("./assets/salmon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 3px black solid;
+
+}
+
+h1{
     text-align: center;
-    font-family:"Bodoni 72",Didot,"Hoe­fler Text",serif;
+    font-family: 'Amatic SC', cursive;
 }
 
-#line{
-
-    border:none;
-    top:38%;
-    position: absolute;
-    width: 100%;
-    border-bottom:1px solid white;
-    z-index: 90;
-    padding: 0.5px;
-
-    z-index: 70;
-
+main{
+    margin-top:none;
+    width:63%;
+    margin:auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.column1of2{
-    position: relative;
-    top:110px;
+main section{
+    float:top;
+}
+
+section div{
+    align-self: auto;
     float:left;
-    width:60%;
+    list-style: none;
+    margin:3px;
 }
-
+section div p{
+    list-style: none;
+    color:grey;   
+}
+#imageWrapper img{
+    width:10%;
+    position: relative;
+    
+}
+#link{
+    float: right;
+}
 #salesData{
-    font-family: Tahoma, Verdana, sans-serif;
-    font-style: normal;
-    font-size:12px;
+    background-color: aliceblue;
+    color: olivedrab;
+}
+td{
+    color:olivedrab;
+}
+th{
+    color:seagreen;
 }
 
-.column2of2{
-    top:110px;
-    position: relative;
-    float:left;
-    width:40%;
-}
-table{
-    
-}
-h1{
-    
-    z-index: 100;
-}
-img{
-    float:left;
-    height:50px;
-    z-index: 100;
-    
-}
-h1{
-    font-family: sans-serif;
-}
