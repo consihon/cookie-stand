@@ -5,49 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>/title goes here/</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link href="style.css" type="text/css" rel = "styleSheet">
+    
 </head>
 <body>
-<div class=floatingHead>
-    
-    <img id = "head" src ="salmon.svg">
-    
-    <div id = "line">
-        <p></p>
+    <header>
+        <div id="logo">
+            <a href = "index.html">
+                <h1> Pats Salmon cookies </h1>
+            </a>
+        </div>
+    </header>
+
+
+<main>
+    <section id = locations>
+        <h3>Locations:</h3>
+            <div>
+                <h4>Pike Place</h4>
+                <p>
+                    Adress: 123 pike <br>
+                    Hours: 6am-8pm daily<br>
+                    Contact: 2067774200<br>
+                </p>
+            </div>
+            <div>
+                <h4>SeaTac Airport</h4>
+                <p>
+                    Adress: 123 Airport<br>
+                    Hours: 6am-8pm daily<br>
+                    Contact: 2067774200<br>
+                </p>
+            </div>
+            <div>
+                <h4>Seattle Center</h4>
+                <p>
+                    Adress: 123 Mercer <br>
+                    Hours: 6am-8pm daily<br>
+                    Contact: 2067774200<br>
+                </p>
+            </div>
+            <div>
+                <h4>Alki</h4>
+                <p>
+                    Adress: 123 Beach <br>
+                    Hours: 6am-8pm daily<br>
+                    Contact: 2067774200<br>
+                </p>
+            </div>
+            <div>
+                <h4>Capitol Hill</h4>
+                <p>
+                    Adress: 123 Broadway<br>
+                    Hours: 6am-8pm daily<br>
+                    Contact: 2067774200<br>
+                </p>
+            </div>
+    </section>
+    <section>
+    <div id = "imageWrapper">
+        <h3>Social Media</h3>
+        <h4>@SmellsFishy</h4>
+            <img class=rotatingPics src="./assets/chinook.jpg">
+            <img class = rotatingPics src = "./assets/cutter.jpeg">
+            <img class = rotatingPics src = "./assets/family.jpg">
+            <img class = rotatingPics src = "./assets/fish.jpg">
+            <img class = rotatingPics src = "./assets/frosted-cookie.jpg">
+            <img class = rotatingPics src = "./assets/salmon.png">
+            <img class = rotatingPics src = "./assets/shirt.jpg">
     </div>
-</div>
+    </section>
 
-<div class="column1of2">
-    <h1 id = headTitle>Pats Salmon cookies </h1>
     
-    <table id='salesData'></table>
-</div>
-
-
-<div class="column2of2" id="storeForm">
-    <form id ="newStoreForm">
-    <fieldset>
-        <legend>Create new store</legend>
-        <label>Location:<br />
-            <input type = "text" name="location"/>
-        </label>
-        <br />
-        <label>Minimum hourly customers<br />
-            <input type = "number" name="minCustomers" />
-        </label>
-        <br />
-        <label>Maximum hourly customers<br />
-            <input type = "number" name="maxCustomers"/>
-        </label>
-        <br />
-        <label>Average cookies sold per sale<br />
-            <input type ="number" name = "averageSales" />
-        </label>
-        <br />
-        <input type = "submit" value="Add Store" />
-    </fieldset>
-    </form>
-</div>
+</main>
+<a id="link" href ="./sales.html">Sales</a>
     
 </body>
 <script href src ="app.js"></script>
