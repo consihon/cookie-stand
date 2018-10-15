@@ -73,8 +73,6 @@ var buildFooter=function(){
     var tdEl= document.createElement('td');
     for (var j=0;j<stores.length;j++){//to add all stores at each index
       total+=stores[j].day[i];
-      truTotal+=stores[j].day[i];
-      console.log(truTotal);
     }
     if (i===stores[0].hours.length){
       tdEl.textContent=truTotal;
